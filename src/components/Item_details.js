@@ -3,11 +3,12 @@ import "css/main.css";
 import cn from "classnames";
 
 const Item_details = ({ title, currency_code, price, quantity }) => {
-   const levelLow = 10;
+  const levelLow = 10;
   const levelHigh = 20;
-  const titleLetters = "".concat(title).split("", 50);
+
+  const titleLetters = title?.slice(0, 50).split("");
   const preparedTitle =
-    titleLetters.length < 50 ? title : `${titleLetters.join("")}...`;
+    titleLetters?.length < 50 ? title : `${titleLetters?.join("")}...`;
 
   return (
     <div className="item-details">
