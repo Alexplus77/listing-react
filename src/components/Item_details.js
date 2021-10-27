@@ -3,9 +3,16 @@ import "css/main.css";
 import cn from "classnames";
 
 const Item_details = ({ title, currency_code, price, quantity }) => {
+  const titleArr = "";
+  const titleLength = titleArr.concat(title).split("");
+
   return (
     <div className="item-details">
-      <p className="item-title">{title}</p>
+      <p className="item-title">
+        {titleLength.length < 50
+          ? title
+          : titleLength.splice(51, titleLength.length - 1, "...").join("")}
+      </p>
       <p className="item-price">
         {price}
         {currency_code}
