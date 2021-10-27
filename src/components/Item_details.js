@@ -6,8 +6,7 @@ const Item_details = ({ title, currency_code, price, quantity }) => {
   const levelLow = 10;
   const levelHigh = 20;
 
-  const preparedTitle =
-    title?.length > 50 ? `${title?.slice(0, 50)}...` : title;
+  const preparedTitle = title?.length > 50 ? `${title.slice(0, 50)}...` : title;
 
   return (
     <div className="item-details">
