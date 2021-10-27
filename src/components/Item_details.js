@@ -6,9 +6,8 @@ const Item_details = ({ title, currency_code, price, quantity }) => {
   const levelLow = 10;
   const levelHigh = 20;
 
-  const titleLetters = title?.slice(0, 50).split("");
   const preparedTitle =
-    titleLetters?.length < 50 ? title : `${titleLetters?.join("")}...`;
+    title?.length > 50 ? `${title?.slice(0, 50)}...` : title;
 
   return (
     <div className="item-details">
