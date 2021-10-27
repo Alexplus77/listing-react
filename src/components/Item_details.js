@@ -4,14 +4,13 @@ import cn from "classnames";
 
 const Item_details = ({ title, currency_code, price, quantity }) => {
   const titleArr = "";
-  const titleLength = titleArr.concat(title).split("");
+  const titleLetters = titleArr.concat(title).split("");
+  titleLetters.splice(51, titleLetters.length - 1, "...").join("");
 
   return (
     <div className="item-details">
       <p className="item-title">
-        {titleLength.length < 50
-          ? title
-          : titleLength.splice(51, titleLength.length - 1, "...").join("")}
+        {titleLetters.length < 50 ? title : titleLetters}
       </p>
       <p className="item-price">
         {price}
