@@ -1,10 +1,10 @@
-import Listing from "components/Listing";
+import ListingPage from "components/ListingPage";
 import etsyData from "data/etsy.json";
 const App = () => {
   //console.log(etsyData);
   return (
     <>
-      <Listing etsyData={etsyData} />
+      <ListingPage etsyData={etsyData} />
     </>
   );
 };

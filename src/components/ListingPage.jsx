@@ -3,7 +3,7 @@ import "css/main.css";
 import Item_details from "./Item_details";
 import Item_image from "./Item_image";
 
-const Listing = ({ etsyData }) => {
+const ListingPage = ({ etsyData }) => {
   return (
     <div className="item-list">
       {etsyData.map(
@@ -31,4 +31,4 @@ const Listing = ({ etsyData }) => {
   );
 };
 
-export default Listing;
+export default ListingPage;
