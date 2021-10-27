@@ -3,24 +3,24 @@ import "css/main.css";
 import cn from "classnames";
 
 const Item_details = ({ title, currency_code, price, quantity }) => {
-  const titleArr = "";
-  const titleLetters = titleArr.concat(title).split("");
-  titleLetters.splice(51, titleLetters.length - 1, "...").join("");
+   const levelLow = 10;
+  const levelHigh = 20;
+  const titleLetters = "".concat(title).split("", 50);
+  const preparedTitle =
+    titleLetters.length < 50 ? title : `${titleLetters.join("")}...`;
 
   return (
     <div className="item-details">
-      <p className="item-title">
-        {titleLetters.length < 50 ? title : titleLetters}
-      </p>
+      <p className="item-title">{preparedTitle}</p>
       <p className="item-price">
         {price}
         {currency_code}
       </p>
       <p
         className={cn("item-quantity", {
-          "level-low": quantity <= 10,
-          "level-medium": quantity <= 20 && quantity > 10,
-          "level-high": quantity > 20,
+          "level-low": quantity <= levelLow,
+          "level-medium": quantity <= levelHigh && quantity > levelLow,
+          "level-high": quantity > levelHigh,
         })}
       >
         {quantity}
